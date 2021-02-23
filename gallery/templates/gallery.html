@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Coolfacts - Gallery</title>
+{% endblock title %}
+
+
+{% block nav %}
+
+{% include 'navbar.html' %}
+
+{% endblock nav %}
+
+
+{% block content %}
+
+<div class="page-title" style="background-image: url(/static/style/images/art/pagetitle3.jpg);">
+  <div class="over"></div>
+  <h1>Gallery</h1>
+</div>
+
+<div class="portfolio-grid">
+  <div class="isotope-filter button-group">
+    <ul>
+      <li><a class="button is-checked" data-filter="*">All</a></li>
+      <li><a class="button" data-filter=".category1">Facts</a></li>
+      <li><a class="button" data-filter=".category2">Motivation</a></li>
+      <li><a class="button" data-filter=".category3">Myth Vs Reality</a></li>
+    </ul>
+  </div>
+  <ul class="isotope items light-gallery">
+    {% for post in posts %}
+    {% if post.post_cat|stringformat:'s' == "Facts"  %}
+    <li class="item category1">
+      {% include 'item.html' %}
+    </li>
+
+    {% elif post.post_cat|stringformat:'s' == "Motivation"  %}
+    <li class="item category2">
+      {% include 'item.html' %}
+    </li>
+
+    {% elif post.post_cat|stringformat:'s' == "MvR"  %}
+    <li class="item category3">
+      {% include 'item.html' %}
+    </li>
+
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+</main>
+
+<br>
+<br>
+
+{% endblock content %}

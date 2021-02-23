@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="/static/style/images/favicon.png">
+{% block title %} {% endblock title %}
+
+<link href="{% static 'style/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/plugins.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/settings.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/layers.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/navigation.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/color/aqua.css' %}" rel="stylesheet">
+<link href="{% static 'style/type/icons.css' %}" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,700italic,700,400italic,300italic,300'
+    rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+{% block nav %} {% endblock nav %}
+
+
+<div class="nav-wrapper">
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="#">Category <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/category/All/">All Posts</a></li>
+                    <li><a href="/category/Facts/">Facts</a></li>
+                    <li><a href="/category/Motivation/">Motivation</a></li>
+                    <li><a href="/category/MvR">Myth vs Reality</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#!">Socials <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://www.instagram.com/thefactstore/" target="_blank">Instagram</a></li>
+                    <li><a href="https://in.pinterest.com/outfitbiz/" target="_blank">Pinterest</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+{% block content %} {% endblock content %}
+
+
+<footer class="inverse-wrapper">
+    <div class="container inner">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h4 class="widget-title">Popular Posts</h4>
+                    <ul class="post-list">
+                        <li>
+                            <figure class="overlay"> <a href="#"><img src="/static/style/images/art/a1.jpg"
+                                        alt="" /> </a> </figure>
+                            <div class="post-content">
+                                <p> <a href="">Magna mollis ultricies</a> </p>
+                                <div class="meta"><span class="date">3th Oct 2012</span> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="overlay"> <a href="#"><img src="/static/style/images/art/a2.jpg"
+                                        alt="" /> </a> </figure>
+                            <div class="post-content">
+                                <p> <a href="">Ornare nullam risus</a> </p>
+                                <div class="meta"><span class="date">28th Sep 2012</span> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="overlay"> <a href="#"><img src="/static/style/images/art/a3.jpg"
+                                        alt="" /> </a> </figure>
+                            <div class="post-content">
+                                <p> <a href="">Euismod nullam</a> </p>
+                                <div class="meta"><span class="date">15th Aug 2012</span> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h4 class="widget-title">Recent Tags</h4>
+                    <ul class="tag-list">
+                        <li> <a href="/category/Facts/" class="btn">Facts</a> </li>
+                        <li> <a href="/category/Motivation/" class="btn">Motivation</a> </li>
+                        <li> <a href="/category/MvR" class="btn">Myth Vs Reality</a> </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h4 class="widget-title">Get in Touch</h4>
+                    <address>
+                        <strong>Malory, Inc.</strong><br>
+                        Moon Street Light Avenue, 14/05 <br>
+                        Jupiter, JP 80630<br>
+                        <abbr title="Phone">P:</abbr> (123) 456-7890 <br>
+                        <abbr title="Email">E:</abbr> <a href="mailto:#">first.last@example.com</a>
+                    </address>
+                </div>
+                <div class="widget">
+                    <h4 class="widget-title">Elsewhere</h4>
+                    <ul class="social">>
+                        <li> <a href="https://www.instagram.com/thefactstore/" target="_blank"><i
+                                    class="icon-s-instagram"></i></a> </li>
+                        <li> <a href="https://in.pinterest.com/outfitbiz/" target="_blank"><i
+                                    class="icon-s-pinterest"></i></a> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h4 class="widget-title">About Me</h4>
+                    <figure> <img src="/static/style/images/art/about-us-270.jpg" alt="" /> </figure>
+                    <div class="divide10"></div>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula lacinia. Morbi risus,
+                        porta ac leo justo vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-footer">
+        <div class="container inner">
+            <p class="text-center">© 2021. <a href="/">Coolfacts</a> .</p>
+        </div>
+    </div>
+</footer>
+</div>
+
+</div>
+
+<script src="/static/style/js/jquery.min.js"></script>
+<script src="/static/style/js/bootstrap.min.js"></script>
+<script src="/static/style/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+<script src="/static/style/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/static/style/js/plugins.js"></script>
+<script src="/static/style/js/scripts.js"></script>
+
+</body>
+
+</html>

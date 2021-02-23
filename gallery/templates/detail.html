@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Coolfacts - {{ article.article_title }}</title>
+{% endblock title %}
+
+{% block nav %}
+{% include 'navbar.html' %}
+{% endblock nav %}
+
+
+{% block content %}
+
+<div class="page-title" style="background-image: url(/static/style/images/art/pagetitle1.jpg);">
+<div class="over"></div>
+<h1>Blog Post</h1>
+</div>
+<!-- /.page-title -->
+
+<div class="container">
+<div class="blog single row">
+<div class="col-sm-12 col-md-9 blog-content">
+    <div class="blog-posts classic-view box">
+        <div class="post text-center">
+            <h1 class="post-title"> {{ article.article_title }} </h1>
+            <div class="meta"> <span class="date">{{ article.date_posted }}</span> <span class="category"> <a
+                        href="#">{{ article.article_cat }}</a></span> <span class="comments"></span> </div>
+            <figure class="main bm30"><img src="/media/{{ article.article_main_image }}" alt="" /></figure>
+            <hr />
+            <div class="post-content text-left">
+                <p>{{ article.article_desc }}</p>
+
+                <hr />
+
+                <div class="tiles post-gallery">                        
+                    <div class="items row row-offset-0 light-gallery">
+                        {% for img in article_images %}
+                        <div class="item col-xs-12 col-sm-6 col-md-6">
+                            <figure class="overlay"><a class="lgitem" href="/media/{{ img.article_images }}"
+                                    data-sub-html="#caption3"> <img src="/media/{{ img.article_images }}" alt="" /> </a>
+                            </figure>
+                        </div>
+                        {% endfor %}
+                    </div> 
+                </div>
+                <hr />
+                {% for article in article_contents %}
+                <p>{{ article.article_content }}</p>
+                {% endfor %}
+            </div>
+            <!-- /.post-content -->
+
+            <div class="meta tags"><a href="#">{{ article.article_cat }}</a></div>
+            <ul class="social bordered">
+                <li> <a href="#"><i class="icon-s-pinterest"></i></a> </li>
+                <li> <a href="#"><i class="icon-s-gplus"></i></a> </li>s
+                <li> <a href="#"><i class="icon-s-email"></i></a> </li>
+            </ul>
+            <!-- /share -->
+
+            <hr />
+
+            <div id="disqus_thread"></div>
+            <script>
+                (function () {
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//malory.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+                    rel="nofollow">comments powered by Disqus.</a>
+            </noscript>
+
+            <div class="comment-form-wrapper text-left">
+                <h5 class="section-title sans">Would you like to share your thoughts?</h5>
+                <p>Your email address will not be published. Required fields are marked *</p>
+                <form class="comment-form" name="form_name" action="#" method="post">
+                    <div class="name-field">
+                        <input type="text" name="first" title="Name*" />
+                    </div>
+                    <div class="email-field">
+                        <input type="text" name="first" title="Email*" />
+                    </div>
+                    <div class="website-field">
+                        <input type="text" name="first" title="Website" />
+                    </div>
+                    <div class="message-field">
+                        <textarea name="textarea" id="textarea" rows="5" cols="30"
+                            title="Enter your comment here..."></textarea>
+                    </div>
+                    <input type="submit" value="Submit" name="submit" class="btn btn-submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<aside class="col-sm-6 col-md-3 sidebar">
+    <div class="sidebox widget">
+        <h4 class="widget-title">About Me</h4>
+        <figure>
+            <img src="style/images/art/about.jpg" alt="" />
+        </figure>
+        <div class="divide10"></div>
+        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum.</p>
+        <ul class="social">
+            <li> <a href="#"><i class="icon-s-rss"></i></a> </li>
+            <li> <a href="#"><i class="icon-s-twitter"></i></a> </li>
+            <li> <a href="#"><i class="icon-s-facebook"></i></a> </li>
+            <li> <a href="#"><i class="icon-s-pinterest"></i></a> </li>
+            <li> <a href="#"><i class="icon-s-linkedin"></i></a> </li>
+            <li> <a href="#"><i class="icon-s-flickr"></i></a> </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <!-- /.widget -->
+
+
+    </main>
+    <!-- /main -->
+
+    {% endblock content %}

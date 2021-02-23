@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Coolfacts - {{ ctitle }}</title>
+{% endblock title %}
+
+
+{% block nav %}
+
+<div class="animsition">
+<main>
+<div class="navbar navbar-default default" role="navigation">
+  <div class="navbar-header">
+    <div class="navbar-brand"><a href="/"><img src="#"
+          srcset="/static/style/images/logo.png 1x, /static/style/images/logo@2x.png 2x" alt="" /></a></div>
+    <div class="nav-bars-wrapper">
+      <div class="nav-bars-inner">
+        <div class="nav-bars" data-toggle="collapse" data-target=".navbar-collapse"><span></span></div>
+      </div>
+    </div>
+    <div class="header-other">
+      <div class="btn-group pull-right text-right"> <a href="#" class="share-button btn btn-light dropdown-toggle"
+          data-toggle="dropdown"><span></span>Share</a>
+        <div class="dropdown-menu">
+          <div class="goodshare-wrapper"> <a href="#" class="goodshare" data-type="fb">Share</a> <a href="#"
+              class="goodshare" data-type="tw">Tweet</a> <a href="#" class="goodshare" data-type="pt">Pin</a> <a
+              href="#" class="goodshare" data-type="tm">Post</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock nav %}
+
+  {% block content %}
+
+  <div class="page-title" style="background-image: url(/static/style/images/art/pagetitle3.jpg);">
+    <div class="over"></div>
+    <h1>{{ ctitle }}</h1>
+  </div>
+
+  <br><br>
+
+  <div class="portfolio-grid">
+    <ul class="isotope items light-gallery">
+      {% for post in filtered_posts %}
+      <li class="item">
+        <figure class="overlay inverse "> <a href="/media/{{ post.post_image }}" class="lgitem"
+            data-sub-html="#caption1">
+            <div class="text-overlay caption" id="caption1">
+              <div class="info">
+                <h2 class="post-title">{{ post.post_title }}</h2>
+                <p>{{ post.post_cat }}</p>
+              </div>
+            </div>
+            <img src="/media/{{ post.post_image }}" alt="" />
+          </a> </figure>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <br>
+
+  <div class="container inner">
+    <div class="thin2 text-center">
+      {% if filtered_posts.has_previous %}
+      <a href="?page={{ filtered_posts.previous_page_number }}" class="btn"><i class="icon-left-1"></i></a>
+      {% endif %}
+      {% if filtered_posts.has_next %}
+      <a href="?page={{ filtered_posts.next_page_number }}" class="btn"><i class="icon-right-1"></i></a>
+      {% endif %}
+    </div>
+  </div>
+
+  <br>
+
+  {% endblock content %}

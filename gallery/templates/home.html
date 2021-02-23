@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<div class="animsition">
+    <div class="full-box">
+        <main>
+            <div class="navbar navbar-default default" role="navigation">
+                <div class="navbar-header">
+                    <div class="navbar-brand"><a href="/"><img src="#"
+                                srcset="/static/style/images/logo.png 1x, /static/style/images/logo@2x.png 2x"
+                                alt="" /></a></div>
+                    <div class="nav-bars-wrapper">
+                        <div class="nav-bars-inner">
+                            <div class="nav-bars" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span></span></div>
+                        </div>
+                        <!-- /.nav-bars-inner -->
+                    </div>
+                    <!-- /.nav-bars-wrapper -->
+                    <div class="header-other">
+                        <div class="btn-group pull-right text-right"> <a href="#"
+                            class="share-button btn btn-light dropdown-toggle" data-toggle="dropdown"><span></span>Share</a>
+                          <div class="dropdown-menu">
+                            <div class="goodshare-wrapper"> <a href="#" class="goodshare" data-type="fb">Share</a> <a href="#"
+                                class="goodshare" data-type="tw">Tweet</a> <a href="#" class="goodshare" data-type="pt">Pin</a> <a
+                                href="#" class="goodshare" data-type="tm">Post</a> </div>
+                            <!-- /.goodshare-wrapper -->
+                          </div>
+                          <!-- /.dropdown-menu -->
+                        </div>
+                        <!-- /.btn-group -->
+                      </div>
+                    <!-- /.header-other -->
+                </div>
+{% endblock nav %}
+
+{% block content %}
+
+<div class="rev_slider_wrapper">
+<div id="slider1" class="rev_slider" data-version="5.0">
+    <ul>
+        <li data-transition="parallaxtoright" data-fstransition="fade"> <img
+                src="/static/style/images/art/slider-bg1.jpg" alt=""> </li>
+        <li data-transition="parallaxtobottom"> <img src="/static/style/images/art/slider-bg2.jpg" alt=""> </li>
+        <li data-transition="parallaxtoleft"> <img src="/static/style/images/art/slider-bg3.jpg" alt=""> </li>
+    </ul>
+    <div class="tp-static-layers">
+        <div class="tp-caption tp-static-layer display text-center" data-x="center" data-y="center"
+            data-voffset="-30" data-fontsize="['50','50','50','40']" data-lineheight="['50','50','50','40']"
+            data-start="500" data-splitin="none" data-splitout="none" data-responsive="on"
+            data-responsive_offset="on" data-startslide="0" data-endslide="3" style="z-index: 5;">Coolfacts</div>
+        <div class="tp-caption tp-static-layer sans text-center" data-x="center" data-y="center" data-voffset="30"
+            data-fontsize="['18','18','18','18']" data-lineheight="['18','18','18','18']" data-start="500"
+            data-splitin="none" data-splitout="none" data-responsive="on" data-responsive_offset="on"
+            data-startslide="0" data-endslide="3" style="z-index: 6;">Fun. Facts. Quotes.</div>
+    </div>
+    <div class="tp-bannertimer tp-bottom"></div>
+</div>
+</div>
+<!-- /.rev_slider -->
+
+<div class="container inner">
+    <p class="lead text-center bm0">Latest Articles</p>
+    </div>
+
+    <div class="portfolio-grid">
+        <ul class="isotope items ">
+            {% for article in articles %}
+            <li class="item">
+                <figure class="overlay inverse"> <a href="/blog/{{article.article_id}}/" class="lgitem"
+                        data-sub-html="#caption1">
+                        <div class="text-overlay caption" id="caption1">
+                            <div class="info">
+                                <h2 class="post-title">{{ article.article_title }}</h2>
+                                <p>{{ article.article_cat }}</p>
+                            </div>
+                        </div>
+                        <img src="/media/{{ article.article_main_image }}" alt="" />
+                    </a> </figure>
+            </li>
+            {% endfor %}
+        </ul>
+        <!-- /.isotope -->
+        </div>
+
+<div class="container inner">
+<p class="lead text-center bm0">Latest Posts</p>
+</div>
+<!-- /.container -->
+
+<div class="portfolio-grid">
+<ul class="isotope items light-gallery">
+    {% for post in posts %}
+    <li class="item">
+        <figure class="overlay inverse"> <a href="/media/{{ post.post_image }}" class="lgitem"
+                data-sub-html="#caption1">
+                <div class="text-overlay caption" id="caption1">
+                    <div class="info">
+                        <h2 class="post-title">{{ post.post_cat }}</h2>
+                        <p>{{ post.post_title }}</p>
+                    </div>
+                </div>
+                <img src="/media/{{ post.post_image }}" alt="" />
+            </a> </figure>
+    </li>
+    {% endfor %}
+</ul>
+<!-- /.isotope -->
+</div>
+<!-- /.portfolio-grid -->
+
+<br/>
+
+<div class="container inner">
+<div class="thin2 text-center">
+    <a href="/gallery/" class="btn"><i class="icon-s-instagram"></i>   View Gallery</a>
+</div>
+</div>
+
+</main>
+<!-- /main -->
+
+{% endblock content %}

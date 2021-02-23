@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Coolfacts - Blog</title>
+{% endblock title %}
+
+{% block nav %}
+{% include 'navbar.html' %}
+{% endblock nav %}
+
+
+{% block content %}
+
+<div class="page-title" style="background-image: url(/static/style/images/art/pagetitle1.jpg);">
+<div class="over"></div>
+<h1>Blog Page</h1>
+</div>
+<!-- /.page-title -->
+
+<div class="container">
+<div class="box">
+
+<p class="lead text-center">Hello! Welcome to my blog. Here on this blog you will find interesting
+  articles that you may be curious about.</p>
+  <hr />
+<div class="divide10"></div>
+
+<div class="blog tiles">
+  <div class="items row row-offset-0">
+    {% for article in articles %}
+    <div class="post item col-xs-12 col-sm-6 col-md-6">
+      <figure class="overlay"><a href="/blog/{{article.article_id}}/">
+          <div class="text-overlay caption">
+            <div class="info">
+              <h2 class="post-title">{{ article.article_title }}</h2>
+              <div class="meta"> <span class="date">{{ article.date_posted }}</span> <span class="category">{{ article.article_cat }}</span>
+                </div>
+            </div>
+          </div>
+          <img src="/media/{{ article.article_main_image }}" alt="" />
+        </a></figure>
+    </div>
+    {% endfor %}
+  </div>
+  <!--/.items -->
+</div>
+<!--/.tiles -->
+
+<div class="pagination">
+  <ul>
+    {% if articles.has_previous %}
+    <li><a href="?page={{ articles.previous_page_number }}" class="btn">Prev</a></li>
+    {% endif %}
+    {% if articles.has_next %}
+    <li><a href="?page={{ articles.next_page_number }}" class="btn">Next</a></li>
+    {% endif %}
+  </ul>
+</div>
+<!-- /.pagination -->
+
+</div>
+<!--/.box -->
+</div>
+<!--/.container -->
+
+</main>
+<!-- /main -->
+
+<br>
+
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="/static/style/images/favicon.png">
+{% block title %} {% endblock title %}
+
+<link href="{% static 'style/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/plugins.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/settings.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/layers.css' %}" rel="stylesheet">
+<link href="{% static 'style/revolution/css/navigation.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'style/css/color/aqua.css' %}" rel="stylesheet">
+<link href="{% static 'style/type/icons.css' %}" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,700italic,700,400italic,300italic,300'
+rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+<div class="rev_slider_wrapper">
+<div id="slider1" class="rev_slider" data-version="5.0">
+    <ul>
+        <li data-transition="parallaxtoright" data-fstransition="fade"> <img
+                src="/static/style/images/art/slider-bg1.jpg" alt=""> </li>
+        <li data-transition="parallaxtobottom"> <img src="/static/style/images/art/slider-bg2.jpg" alt=""> </li>
+        <li data-transition="parallaxtoleft"> <img src="/static/style/images/art/slider-bg3.jpg" alt=""> </li>
+    </ul>
+<div class="tp-static-layers">
+    <div class="tp-caption tp-static-layer display text-center" data-x="center" data-y="center"
+        data-voffset="-30" data-fontsize="['50','50','50','40']" data-lineheight="['50','50','50','40']"
+        data-start="500" data-splitin="none" data-splitout="none" data-responsive="on"
+        data-responsive_offset="on" data-startslide="0" data-endslide="3" style="z-index: 5;">404</div>
+    <div class="tp-caption tp-static-layer sans text-center" data-x="center" data-y="center"
+        data-voffset="30" data-fontsize="['18','18','18','18']" data-lineheight="['18','18','18','18']"
+        data-start="500" data-splitin="none" data-splitout="none" data-responsive="on"
+        data-responsive_offset="on" data-startslide="0" data-endslide="3" style="z-index: 6;">Looks like you have clicked a wrong link.
+        Go to <a href="/"> Home.</a></div>
+</div>
+<div class="tp-bannertimer tp-bottom"></div>
+</div>
+</div>
+
+<script src="/static/style/js/jquery.min.js"></script>
+<script src="/static/style/js/bootstrap.min.js"></script>
+<script src="/static/style/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+<script src="/static/style/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/static/style/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/static/style/js/plugins.js"></script>
+<script src="/static/style/js/scripts.js"></script>
+
+</body>
+
+</html>
